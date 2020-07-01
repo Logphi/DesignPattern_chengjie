@@ -1,17 +1,20 @@
-package com.ttl.designpattern.ch15;
+package com.ttl.designpattern.ch15.bean;
 
 /**
- * @ClassName User
+ * @ClassName Department
  * @Description TODO
  * @Author ttl
- * @Date 2020/6/30 16:57
+ * @Date 2020/7/1 10:34
  * Version 1.0
  **/
-public class User {
+public class Department {
     private int id;
     private String name;
 
-    public User(int id, String name) {
+    public Department() {
+    }
+
+    public Department(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -34,7 +37,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Department{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
