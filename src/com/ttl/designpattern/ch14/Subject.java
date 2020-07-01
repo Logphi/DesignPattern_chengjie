@@ -8,7 +8,6 @@ package com.ttl.designpattern.ch14;
  * Version 1.0
  **/
 public interface Subject {
-    void notifyObserver();
 
-    String getMessage();
+    void notifyListener();
 }

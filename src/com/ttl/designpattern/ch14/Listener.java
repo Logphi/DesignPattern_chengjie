@@ -1,8 +1,6 @@
 package com.ttl.designpattern.ch14;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 /**
  * @ClassName Event
  * @Description TODO
@@ -10,13 +8,13 @@ import java.lang.reflect.Method;
  * @Date 2020/6/30 17:01
  * Version 1.0
  **/
-public class Event {
+public class Listener {
     private Object object;
     private String methodName;
     private Object[] params;
     private Class[] paramTypes;
 
-    public Event(Object object, String methodName, Object...  params) {
+    public Listener(Object object, String methodName, Object...  params) {
         this.object = object;
         this.methodName = methodName;
         this.params = params;
@@ -30,7 +28,7 @@ public class Event {
         }
     }
 
-    public void invoke() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void invoke() throws Exception {
         Method method = object.getClass().getMethod(this.methodName, this.paramTypes);
         if (method == null) {
             return;

@@ -1,7 +1,5 @@
 package com.ttl.designpattern.ch14;
 
-import java.util.ArrayList;
-import java.util.List;
 /**
  * @ClassName Secretary
  * @Description TODO
@@ -10,23 +8,26 @@ import java.util.List;
  * Version 1.0
  **/
 public class Secretary implements Subject {
-    private List<Observer> observers = new ArrayList<>();
-    private String action;
-    private Event event;
+    private ListenerHandler handler;
 
-    public void setAction(String action) {
-        this.action = action;
+    public Secretary() {
+        handler = new ListenerHandler();
+    }
+
+    /**
+     * 添加监听
+     * @param listener
+     */
+    public void addListener(Listener listener) {
+        handler.addListener(listener);
     }
 
     @Override
-    public String getMessage() {
-        return action;
-    }
-
-    @Override
-    public void notifyObserver() {
-        for (Observer observer : observers) {
-            observer.update();
+    public void notifyListener() {
+        try {
+            handler.notifyListener();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

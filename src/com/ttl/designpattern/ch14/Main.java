@@ -12,12 +12,12 @@ public class Main {
     public static void main(String[] args) {
         Secretary secretary = new Secretary();
 
-        StockObserver observer1 = new StockObserver("哈哈", secretary);
-        NBAObserver observer2 = new NBAObserver("嘻嘻", secretary);
+        StockListener listener1 = new StockListener("哈哈", secretary);
+        NBAListener listener2 = new NBAListener("嘻嘻", secretary);
 
+        secretary.addListener(new Listener(listener1, "closeStockMarket", "老板回来了"));
+        secretary.addListener(new Listener(listener2, "closeNBADirectSeeding", "老板回来了"));
 
-
-        secretary.setAction("老板回来了");
-        secretary.notifyObserver();
+        secretary.notifyListener();
     }
 }
