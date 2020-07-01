@@ -23,9 +23,9 @@ public class Secretary implements Subject {
     }
 
     @Override
-    public void notifyListener() {
+    public void notifyListener(String message) {
         try {
-            handler.notifyListener();
+            handler.notifyListener(message);
         } catch (Exception e) {
             e.printStackTrace();
         }

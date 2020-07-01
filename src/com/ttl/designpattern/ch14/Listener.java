@@ -14,10 +14,13 @@ public class Listener {
     private Object[] params;
     private Class[] paramTypes;
 
-    public Listener(Object object, String methodName, Object...  params) {
+    public Listener(Object object, String methodName) {
         this.object = object;
         this.methodName = methodName;
-        this.params = params;
+    }
+
+    public void setMessage(String message) {
+        this.params = new String[]{message};
         contractParamTypes(params);
     }
 

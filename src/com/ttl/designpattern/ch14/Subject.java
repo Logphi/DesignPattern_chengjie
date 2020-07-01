@@ -9,5 +9,5 @@ package com.ttl.designpattern.ch14;
  **/
 public interface Subject {
 
-    void notifyListener();
+    void notifyListener(String message);
 }

@@ -20,8 +20,9 @@ public class ListenerHandler {
         listeners.add(listener);
     }
 
-    public void notifyListener() throws Exception {
+    public void notifyListener(String message) throws Exception {
         for (Listener listener : listeners) {
+            listener.setMessage(message);
             listener.invoke();
         }
     }

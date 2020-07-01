@@ -15,9 +15,10 @@ public class Main {
         StockListener listener1 = new StockListener("哈哈", secretary);
         NBAListener listener2 = new NBAListener("嘻嘻", secretary);
 
-        secretary.addListener(new Listener(listener1, "closeStockMarket", "老板回来了"));
-        secretary.addListener(new Listener(listener2, "closeNBADirectSeeding", "老板回来了"));
+        secretary.addListener(new Listener(listener1, "closeStockMarket"));
+        secretary.addListener(new Listener(listener2, "closeNBADirectSeeding"));
 
-        secretary.notifyListener();
+        secretary.notifyListener("老板回来了");
+        secretary.notifyListener("停电了");
     }
 }
